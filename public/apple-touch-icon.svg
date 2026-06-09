@@ -1,11 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="112" fill="#2a9d8f" />
-  <rect x="98" y="98" width="316" height="316" rx="56" fill="#f9f4e8" />
+  <rect width="512" height="512" rx="112" fill="#1179c1" />
+  <rect x="96" y="96" width="320" height="320" rx="72" fill="#f4fbff" />
+  <circle cx="144" cy="132" r="24" fill="#ffe27d" />
+  <circle cx="380" cy="384" r="22" fill="#ffd56a" />
   <path
-    d="M176 198h160M176 256h160M176 314h96"
-    stroke="#264653"
+    d="M176 198h160M176 286h120M256 150v90M214 242h84"
+    stroke="#15557f"
     stroke-linecap="round"
     stroke-width="28"
   />
-  <circle cx="336" cy="314" r="18" fill="#e76f51" />
+  <circle cx="336" cy="286" r="36" fill="#1ea9c8" />
+  <path
+    d="M324 286h24M336 274v24"
+    stroke="#ffffff"
+    stroke-linecap="round"
+    stroke-width="12"
+  />
 </svg>

@@ -8,26 +8,32 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["icon.svg", "apple-touch-icon.svg"],
+      includeAssets: ["icon.svg", "apple-touch-icon.png"],
       manifest: {
         name: "Math Practice",
         short_name: "Math Practice",
         description: "Single-session addition and subtraction practice for third graders.",
-        theme_color: "#f9f4e8",
-        background_color: "#f9f4e8",
+        theme_color: "#1179c1",
+        background_color: "#dff6ff",
         display: "standalone",
         start_url: "/mathquiz/",
         icons: [
           {
-            src: "/icon.svg",
-            sizes: "any",
-            type: "image/svg+xml",
+            src: "/icon-192.png",
+            sizes: "192x192",
+            type: "image/png",
             purpose: "any"
           },
           {
-            src: "/icon.svg",
-            sizes: "any",
-            type: "image/svg+xml",
+            src: "/icon-512.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "any"
+          },
+          {
+            src: "/icon-512-maskable.png",
+            sizes: "512x512",
+            type: "image/png",
             purpose: "maskable"
           }
         ]

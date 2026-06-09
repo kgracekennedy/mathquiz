@@ -131,4 +131,20 @@ describe("App", () => {
     expect(cancel).toHaveBeenCalled();
     expect(speak).toHaveBeenCalledTimes(1);
   });
+
+  it("keeps the quiz panel synced with the answer input focus state", async () => {
+    render(<App />);
+    const user = userEvent.setup();
+    const input = screen.getByLabelText(/type the answer/i);
+    const panel = input.closest(".quiz-panel");
+
+    expect(panel).toHaveClass("answer-active");
+
+    await user.tab();
+    expect(panel).not.toHaveClass("answer-active");
+
+    await user.click(input);
+    expect(panel).toHaveClass("answer-active");
+    expect(input).toHaveAttribute("pattern", "[0-9]*");
+  });
 });

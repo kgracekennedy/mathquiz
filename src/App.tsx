@@ -40,6 +40,7 @@ function App() {
   );
   const [showResumeBanner, setShowResumeBanner] = useState(() => initialSession !== null);
   const [speechSupported] = useState(() => supportsSpeechSynthesis());
+  const [inputFocused, setInputFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const currentRecord = records[currentIndex];
@@ -206,7 +207,7 @@ function App() {
 
   return (
     <main className="shell">
-      <section className="panel quiz-panel">
+      <section className={`panel quiz-panel${inputFocused ? " answer-active" : ""}`}>
         <p className="eyebrow">Math Practice</p>
         <h1>Addition and subtraction</h1>
         <div className="intro-row">
@@ -275,11 +276,14 @@ function App() {
             id="answer"
             ref={inputRef}
             inputMode="numeric"
+            pattern="[0-9]*"
             autoComplete="off"
             className="answer-input"
             value={answer}
             aria-describedby="session-help feedback"
             onChange={(event) => setAnswer(event.target.value)}
+            onFocus={() => setInputFocused(true)}
+            onBlur={() => setInputFocused(false)}
           />
           <button type="submit" className="primary-button">
             Check answer
