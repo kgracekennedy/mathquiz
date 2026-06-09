@@ -10,9 +10,13 @@ const ENCOURAGEMENTS = [
   "You are close. Give it another shot.",
   "Keep going. You can solve this one."
 ];
-const MODE_LABELS: Record<SessionMode, string> = {
+const MODE_NAMES: Record<SessionMode, string> = {
   regular: "Regular",
   challenge: "Challenge"
+};
+const MODE_BUTTON_LABELS: Record<SessionMode, string> = {
+  regular: "Regular Mode",
+  challenge: "Challenge Mode"
 };
 
 function getInitialSession(): SessionState | null {
@@ -87,7 +91,7 @@ function App() {
       return;
     }
 
-    resetSession(nextMode, `Started a new ${MODE_LABELS[nextMode].toLowerCase()} set.`);
+    resetSession(nextMode, `Started a new ${MODE_NAMES[nextMode].toLowerCase()} set.`);
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -188,7 +192,7 @@ function App() {
           <button
             type="button"
             className="primary-button"
-            onClick={() => resetSession(mode, `Started a new ${MODE_LABELS[mode].toLowerCase()} set.`)}
+            onClick={() => resetSession(mode, `Started a new ${MODE_NAMES[mode].toLowerCase()} set.`)}
           >
             Start a new set
           </button>
@@ -205,15 +209,13 @@ function App() {
       <section className="panel quiz-panel">
         <p className="eyebrow">Math Practice</p>
         <h1>Addition and subtraction</h1>
-        <p className="lede" id="session-help">
-          Solve 10 problems. If an answer is wrong, the app keeps the same problem on screen and
-          lets the child try again.
-        </p>
-
-        <div className="mode-row" aria-label="Practice mode">
-          <span className="mode-label">Mode</span>
+        <div className="intro-row">
+          <p className="lede" id="session-help">
+            You will solve 10 math problems. If one feels tricky, no worries. You can try the same
+            problem again.
+          </p>
           <div className="mode-toggle" role="group" aria-label="Practice mode selection">
-            {(Object.keys(MODE_LABELS) as SessionMode[]).map((option) => (
+            {(Object.keys(MODE_BUTTON_LABELS) as SessionMode[]).map((option) => (
               <button
                 key={option}
                 type="button"
@@ -221,7 +223,7 @@ function App() {
                 aria-pressed={option === mode}
                 onClick={() => handleModeChange(option)}
               >
-                {MODE_LABELS[option]}
+                {MODE_BUTTON_LABELS[option]}
               </button>
             ))}
           </div>
@@ -236,7 +238,7 @@ function App() {
             <button
               type="button"
               className="secondary-button"
-              onClick={() => resetSession(mode, `Started a new ${MODE_LABELS[mode].toLowerCase()} set.`)}
+              onClick={() => resetSession(mode, `Started a new ${MODE_NAMES[mode].toLowerCase()} set.`)}
             >
               Start over
             </button>
@@ -245,7 +247,7 @@ function App() {
 
         <div className="progress-row" aria-label="Session progress">
           <span>Problem {currentIndex + 1} of 10</span>
-          <span>{MODE_LABELS[mode]} mode</span>
+          <span>{MODE_NAMES[mode]} mode</span>
           <span>{currentRecord.skill === "addition" ? "Addition" : "Subtraction"}</span>
         </div>
 

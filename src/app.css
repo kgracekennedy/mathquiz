@@ -1,27 +1,31 @@
 :root {
-  --bg-top: #f6efe2;
-  --bg-bottom: #e4efe9;
-  --surface: rgba(255, 252, 246, 0.96);
+  --bg-top: #fff7d6;
+  --bg-bottom: #dff5ff;
+  --surface: rgba(255, 253, 248, 0.96);
   --surface-strong: #ffffff;
-  --text: #182432;
-  --muted: #405261;
-  --heading: #13263f;
-  --accent: #0f5c56;
-  --accent-soft: #dcefe9;
-  --problem-bg-start: #17324f;
-  --problem-bg-end: #10233a;
-  --problem-text: #fff8e7;
-  --button-bg: #8f3410;
-  --button-bg-hover: #74280a;
+  --text: #1b2540;
+  --muted: #50607b;
+  --heading: #1a2252;
+  --accent: #0f6d79;
+  --accent-soft: #e0fbff;
+  --problem-bg-start: #ff8b73;
+  --problem-bg-end: #ffcc69;
+  --problem-text: #1f2452;
+  --button-bg: #ff6b6b;
+  --button-bg-hover: #eb5757;
   --button-text: #ffffff;
-  --border: #bac8d4;
-  --warning-border: #c65d2e;
-  --focus-ring: #d97706;
+  --border: #a9d4ea;
+  --warning-border: #f08b4f;
+  --focus-ring: #ff9f1c;
+  --toggle-bg: rgba(255, 255, 255, 0.88);
+  --shadow-color: rgba(45, 68, 117, 0.16);
   color: var(--text);
   background:
-    radial-gradient(circle at top, rgba(217, 119, 6, 0.16), transparent 30%),
+    radial-gradient(circle at 10% 12%, rgba(255, 123, 123, 0.24), transparent 22%),
+    radial-gradient(circle at 88% 14%, rgba(95, 206, 255, 0.2), transparent 18%),
+    radial-gradient(circle at 52% 100%, rgba(255, 214, 92, 0.18), transparent 24%),
     linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
-  font-family: "Trebuchet MS", "Avenir Next", sans-serif;
+  font-family: "Trebuchet MS", "Century Gothic", "Avenir Next", sans-serif;
   line-height: 1.5;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -65,7 +69,7 @@ button {
   background: var(--surface);
   border: 3px solid var(--border);
   border-radius: 28px;
-  box-shadow: 0 20px 60px rgba(24, 36, 50, 0.14);
+  box-shadow: 0 22px 60px var(--shadow-color);
   padding: 24px;
 }
 
@@ -98,7 +102,7 @@ h2 {
 .lede {
   font-size: 1.05rem;
   max-width: 54ch;
-  margin-bottom: 24px;
+  margin-bottom: 0;
 }
 
 .status-banner {
@@ -113,27 +117,34 @@ h2 {
   background: var(--accent-soft);
 }
 
-.mode-row {
+.intro-row {
   display: flex;
   justify-content: space-between;
-  gap: 16px;
-  align-items: center;
+  gap: 18px;
+  align-items: flex-start;
   margin-bottom: 20px;
 }
 
-.mode-label {
-  font-weight: 800;
-  color: var(--heading);
+.intro-row .lede {
+  flex: 1 1 24rem;
 }
 
 .mode-toggle {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+  padding: 10px;
+  border-radius: 22px;
+  border: 2px solid var(--border);
+  background: var(--toggle-bg);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .mode-button {
-  min-width: 128px;
+  min-width: 154px;
 }
 
 .status-banner h2,
@@ -158,6 +169,8 @@ h2 {
   padding: 28px 24px;
   border-radius: 24px;
   background: linear-gradient(135deg, var(--problem-bg-start) 0%, var(--problem-bg-end) 100%);
+  border: 3px solid rgba(255, 255, 255, 0.55);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
   margin-bottom: 20px;
 }
 
@@ -182,7 +195,7 @@ h2 {
   width: 100%;
   min-height: 68px;
   border-radius: 20px;
-  border: 3px solid #7f8d99;
+  border: 3px solid #85b8d3;
   padding: 12px 16px;
   font-size: 2rem;
   text-align: center;
@@ -212,7 +225,8 @@ h2 {
   transition:
     transform 120ms ease,
     background-color 120ms ease,
-    border-color 120ms ease;
+    border-color 120ms ease,
+    box-shadow 120ms ease;
 }
 
 .primary-button:hover,
@@ -225,6 +239,7 @@ h2 {
   border: 0;
   background: var(--button-bg);
   color: var(--button-text);
+  box-shadow: 0 8px 18px rgba(255, 107, 107, 0.28);
 }
 
 .primary-button:hover {
@@ -233,9 +248,14 @@ h2 {
 
 .secondary-button,
 .ghost-button {
-  border: 2px solid var(--heading);
-  background: var(--surface-strong);
+  border: 2px solid #6b82c4;
+  background: rgba(255, 255, 255, 0.94);
   color: var(--heading);
+}
+
+.secondary-button:hover,
+.ghost-button:hover {
+  box-shadow: 0 8px 18px rgba(107, 130, 196, 0.16);
 }
 
 .feedback {
@@ -318,12 +338,20 @@ h2 {
     border-radius: 24px;
   }
 
-  .mode-row,
+  .intro-row,
   .status-banner,
   .progress-row,
   .missed-list li {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .mode-toggle {
+    justify-content: stretch;
+  }
+
+  .mode-button {
+    width: 100%;
   }
 
   .problem-card {

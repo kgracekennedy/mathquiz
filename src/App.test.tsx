@@ -91,7 +91,7 @@ describe("App", () => {
 
     expect(screen.getByRole("heading", { name: /resumed session/i })).toBeInTheDocument();
     expect(screen.getByDisplayValue("42")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /challenge/i })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("button", { name: /challenge mode/i })).toHaveAttribute("aria-pressed", "true");
 
     await user.click(screen.getByRole("button", { name: /start over/i }));
 
@@ -109,11 +109,11 @@ describe("App", () => {
     const user = userEvent.setup();
     const modeGroup = screen.getByRole("group", { name: /practice mode selection/i });
 
-    expect(within(modeGroup).getByRole("button", { name: /^regular$/i })).toHaveAttribute("aria-pressed", "true");
+    expect(within(modeGroup).getByRole("button", { name: /^regular mode$/i })).toHaveAttribute("aria-pressed", "true");
 
-    await user.click(within(modeGroup).getByRole("button", { name: /^challenge$/i }));
+    await user.click(within(modeGroup).getByRole("button", { name: /^challenge mode$/i }));
 
-    expect(within(modeGroup).getByRole("button", { name: /^challenge$/i })).toHaveAttribute("aria-pressed", "true");
+    expect(within(modeGroup).getByRole("button", { name: /^challenge mode$/i })).toHaveAttribute("aria-pressed", "true");
     expect(screen.getByText(/started a new challenge set\./i)).toBeInTheDocument();
 
     const savedState = JSON.parse(window.localStorage.getItem(SESSION_STORAGE_KEY) ?? "{}");
