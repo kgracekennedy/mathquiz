@@ -16,7 +16,7 @@ export default defineConfig({
         theme_color: "#f9f4e8",
         background_color: "#f9f4e8",
         display: "standalone",
-        start_url: "/",
+        start_url: "/mathquiz/",
         icons: [
           {
             src: "/icon.svg",
