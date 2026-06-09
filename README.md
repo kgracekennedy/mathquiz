@@ -4,7 +4,7 @@ Single-session iPad-friendly math practice for addition and subtraction.
 
 ## Current Scope
 This version includes:
-- a visible mode toggle with `Regular` and `Challenge`
+- a visible mode toggle with `Regular Mode` and `Challenge Mode`
 - 10 problems per session
 - 5 addition and 5 subtraction problems
 - structured difficulty behind the scenes, including no-regrouping, regrouping, no-borrow, borrowing, and near-miss subtraction
@@ -15,7 +15,9 @@ This version includes:
 - retry until correct
 - encouraging retry feedback after wrong answers
 - automatic local-only session recovery after refresh or reopen, with a start-over option
-- accessible-by-default styling with larger touch targets and stronger focus states
+- kid-directed top instructions written in second-person language
+- a header layout that keeps the practice-mode buttons close to the top-level instructions
+- brighter kid-friendly styling with larger touch targets, stronger focus states, and accessible contrast
 - optional read-aloud for the current problem when the browser supports speech synthesis
 - on-screen parent summary with first-try accuracy, average time to correct, missed problems, and attempt counts
 

@@ -6,7 +6,7 @@ Math Practice is a lightweight, iPad-friendly web app for extra math practice. T
 ## Current Product State
 This version currently implements:
 1. A single-session quiz with 10 problems.
-2. A visible mode toggle with Regular and Challenge options.
+2. A visible mode toggle with Regular Mode and Challenge Mode options.
 3. Immediate start in Regular mode, with mode changes starting a fresh set.
 4. A fixed mix of 5 addition and 5 subtraction problems per session.
 5. 2-digit and 3-digit operands with structured internal difficulty tiers in Regular mode.
@@ -18,8 +18,10 @@ This version currently implements:
 11. Encouraging feedback after a wrong answer.
 12. An on-screen parent summary after the session.
 13. Local-only session recovery after refresh or reopen, with a start-over option.
-14. Accessible-by-default visual styling with larger touch targets and clearer focus states.
-15. Optional read-aloud for the current problem when browser speech synthesis is available.
+14. Kid-directed top instructions written in light second-person language.
+15. A header layout that keeps the mode controls near the top-level instructions.
+16. Accessible-by-default visual styling with larger touch targets, clearer focus states, and a brighter kid-friendly color palette.
+17. Optional read-aloud for the current problem when browser speech synthesis is available.
 
 ## Current Reporting
 The summary currently shows:
@@ -38,6 +40,7 @@ The summary currently shows:
 5. This version includes a visible mode toggle that starts a fresh set when changed.
 6. This version is designed to be installable from Safari to an iPad home screen.
 7. This version is addition and subtraction only.
+8. The main quiz-screen instructions should address the learner directly rather than describing the child in third person.
 
 ## Non-Goals For This Version
 Do not add these without revisiting the product requirements:

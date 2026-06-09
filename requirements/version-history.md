@@ -2,8 +2,17 @@
 
 ## Current Recorded Version
 
+### Version 2
+- Status: current version recorded on June 9, 2026
+- Scope: same core single-session addition and subtraction practice, with a more kid-friendly quiz-screen presentation
+- Changes in this version:
+  - top-level quiz instructions rewritten to speak directly to the learner in second person
+  - mode buttons renamed to `Regular Mode` and `Challenge Mode`
+  - mode controls moved up next to the top-level instructions for a tighter header layout
+  - brighter, more playful color treatment added while keeping accessible contrast and touch targets
+
 ### Version 1
-- Status: current baseline recorded on June 9, 2026
+- Status: previous baseline recorded on June 9, 2026
 - Scope: single-session addition and subtraction practice for a third-grade learner, delivered as a React + Vite + PWA app for GitHub Pages and iPad home-screen install
 - Included:
   - 10 problems per session with a fixed 5 addition and 5 subtraction mix
