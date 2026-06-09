@@ -9,6 +9,10 @@ This repo is a React + Vite + PWA app for third-grade math practice. Use:
 
 Keep quiz generation, reporting, and UI flow separate so future skills like fractions can plug into the same session engine.
 Commit product-memory docs to GitHub. In this repo, `requirements/requirements.md`, `requirements/version-history.md`, `AGENTS.md`, and `README.md` are part of the source of truth and should not live only in chat history.
+Keep `README.md` concise. It should summarize the app, its major user-facing capabilities, and local run instructions, not minor UI polish or low-level feature details.
+Use `requirements/requirements.md` for current product truth and detailed behavior that future work needs to preserve.
+Use `requirements/version-history.md` for version-by-version milestones and shipped changes when the user explicitly wants that milestone recorded.
+When a future-work idea is implemented, remove it from `Future Work Ideas` and move the shipped behavior into the current product-truth sections instead of leaving it listed as future work.
 Treat versions as explicit product milestones, not automatic counters. Do not increment a version number unless the user explicitly says to create a new version.
 Do not add or edit entries in `requirements/version-history.md` unless the user explicitly asks for that update.
 
@@ -67,5 +71,5 @@ If GitHub Actions shows missing React/JSX modules, check the install step first 
 When product behavior changes, update these docs together if needed:
 - `requirements/requirements.md` for current product truth
 - `requirements/version-history.md` only when the user explicitly wants to record or revise a version milestone
-- `README.md` for current scope and run instructions
+- `README.md` for a concise summary of current scope and run instructions
 - `AGENTS.md` for repo and workflow rules

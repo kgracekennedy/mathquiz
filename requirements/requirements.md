@@ -18,10 +18,9 @@ This version currently implements:
 11. Encouraging feedback after a wrong answer.
 12. An on-screen parent summary after the session.
 13. Local-only session recovery after refresh or reopen, with a start-over option.
-14. Kid-directed top instructions written in light second-person language.
-15. A header layout that keeps the mode controls near the top-level instructions.
-16. Accessible-by-default visual styling with larger touch targets, clearer focus states, and a brighter kid-friendly color palette.
-17. Optional read-aloud for the current problem when browser speech synthesis is available.
+14. Kid-directed quiz-screen instructions written in light second-person language.
+15. Accessible-by-default visual styling with larger touch targets, clearer focus states, and a brighter kid-friendly color palette.
+16. Optional read-aloud for the current problem when browser speech synthesis is available.
 
 ## Current Reporting
 The summary currently shows:

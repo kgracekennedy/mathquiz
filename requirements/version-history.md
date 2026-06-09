@@ -6,10 +6,11 @@
 - Status: current version recorded on June 9, 2026
 - Scope: same core single-session addition and subtraction practice, with a more kid-friendly quiz-screen presentation
 - Changes in this version:
+  - overall quiz-screen presentation refreshed to feel more appealing to kids while preserving accessible contrast and touch targets
   - top-level quiz instructions rewritten to speak directly to the learner in second person
   - mode buttons renamed to `Regular Mode` and `Challenge Mode`
   - mode controls moved up next to the top-level instructions for a tighter header layout
-  - brighter, more playful color treatment added while keeping accessible contrast and touch targets
+  - brighter, more playful color treatment added to replace the more serious previous palette
 
 ### Version 1
 - Status: previous baseline recorded on June 9, 2026
